@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* 🔵 Ring Animation */
+.ring-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: spin 10s linear infinite;
+}
+
+.circle {
+  position: absolute;
+  inset: 0;
+  border: 2px solid hsl(calc(var(--i) * 40), 100%, 50%);
+  border-radius: 50%;
+  transform: rotateX(70deg) translateZ(calc(var(--i) * 15px));
+}
+
+@keyframes spin {
+  0% { transform: rotateX(70deg) rotateY(0deg); }
+  100% { transform: rotateX(50deg) rotateY(180deg); }
+}
+
+/* 🪟 Window Box */
+.window {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  width: 300px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+/* 📊 Table */
+.table-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 150, 0.6);
+  width: 350px;
+  backdrop-filter: blur(5px);
+}
+
+.table-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-box th, 
+.table-box td {
+  border: 1px solid #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.table-box th {
+  background: rgba(255, 255, 255, 0.2);
+}
+
